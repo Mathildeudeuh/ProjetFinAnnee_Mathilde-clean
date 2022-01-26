@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerMove : Mover
+public class AddForceMove : Mover
 {
     private float maxSpeed;
     private float speed;

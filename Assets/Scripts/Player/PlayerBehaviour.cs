@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(AddForceMove))]
+[RequireComponent(typeof(Mover))]
+[RequireComponent(typeof(PlayerAnimations))]
 public class PlayerBehaviour : MonoBehaviour
 {
-    private PlayerMove playerMove;
+    private AddForceMove addForceMove;
     private Vector2 moveLR;
     private Rigidbody2D body2D;
     private SpriteRenderer sprite;
@@ -14,7 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         body2D = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        playerMove = GetComponent<PlayerMove>();
+        addForceMove = GetComponent<AddForceMove>();
     }
 
     public void MoveOnPerformed(InputAction.CallbackContext obj)
@@ -30,7 +33,7 @@ public class PlayerBehaviour : MonoBehaviour
     private void FixedUpdate()
     {
         // Faire le Move
-        playerMove.Move2D();
+        addForceMove.Move2D(moveLR);
 
     }
 
