@@ -30,7 +30,7 @@ public class PlayerBehaviour : MonoBehaviour
     private void FixedUpdate()
     {
         // Faire le Move
-        playerMove.Move(moveLR);
+        playerMove.Move2D();
 
     }
 
