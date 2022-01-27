@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Raycast : Jump
 {
-    private LayerMask layer;
+    public LayerMask layer;
 
     void Update()
     {

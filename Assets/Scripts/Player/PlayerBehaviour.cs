@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Mover))]
 [RequireComponent(typeof(PlayerAnimations))]
 [RequireComponent(typeof(Jump))]
+
 public class PlayerBehaviour : MonoBehaviour
 {
     private AddForceMove addForceMove;
@@ -19,6 +20,7 @@ public class PlayerBehaviour : MonoBehaviour
         body2D = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         addForceMove = GetComponent<AddForceMove>();
+        jump = GetComponent<Jump>();
     }
 
     public void MoveOnPerformed(InputAction.CallbackContext obj)
@@ -28,21 +30,17 @@ public class PlayerBehaviour : MonoBehaviour
             return;
         animations.MoveOnPerformed(moveLR);
         sprite.flipX = (moveLR.x < 0);
-  
     }
 
     private void FixedUpdate()
     {
-        // Faire le Move
         addForceMove.Move2D(moveLR);
-
     }
 
     public void JumpOnPerformed(InputAction.CallbackContext obj)
     {
         if (!obj.performed)
             return;
-        animations.MoveOnPerformed(moveLR);
-        jump.Jumping();
+        animations.JumpOnPerformed();
     }
 }

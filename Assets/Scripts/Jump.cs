@@ -4,7 +4,7 @@ public class Jump : MonoBehaviour
 {
     private Rigidbody2D body2D;
     public bool canJump;
-    protected float jumpForce;
+    public JumpForceSO jumpForce;
 
     private void Awake()
     {
@@ -15,7 +15,7 @@ public class Jump : MonoBehaviour
     {
         if (canJump == true)
         {
-            body2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            body2D.AddForce(new Vector2(0, jumpForce.jumpForceValue), ForceMode2D.Impulse);
         }
     }
 }
