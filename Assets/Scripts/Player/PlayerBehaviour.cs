@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(AddForceMove))]
 [RequireComponent(typeof(Mover))]
 [RequireComponent(typeof(PlayerAnimations))]
+[RequireComponent(typeof(Jump))]
 public class PlayerBehaviour : MonoBehaviour
 {
     private AddForceMove addForceMove;
@@ -11,7 +12,7 @@ public class PlayerBehaviour : MonoBehaviour
     private Rigidbody2D body2D;
     private SpriteRenderer sprite;
     public PlayerAnimations animations;
-    private PlayerJump playerJump;
+    private Jump jump;
 
     void Start()
     {
@@ -42,6 +43,6 @@ public class PlayerBehaviour : MonoBehaviour
         if (!obj.performed)
             return;
         animations.MoveOnPerformed(moveLR);
-        //playerJump.Jumping();
+        jump.Jumping();
     }
 }

@@ -2,12 +2,12 @@
 
 public class AddForceMove : Mover
 {
-    private float maxSpeed;
-    private float speed;
+    public float maxSpeed;
+    public SpeedSO speedSO;
 
     public override void Move2D(Vector2 moveLR)
     {
         if (body2D.velocity.sqrMagnitude < maxSpeed)
-        body2D.AddForce(new Vector2(speed * moveLR.x, 0));
+        body2D.AddForce(new Vector2(speedSO.speed * moveLR.x, 0));
     }
 }
