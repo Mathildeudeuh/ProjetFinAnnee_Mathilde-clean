@@ -6,10 +6,6 @@ public class TimerBehaviour : MonoBehaviour
 {
     public bool onTrigger;
     public float seconde;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
