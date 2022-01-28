@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using TMPro;
 
 
 public class Timer : MonoBehaviour
@@ -10,7 +8,12 @@ public class Timer : MonoBehaviour
     public float addTime;
     public bool onTrigger;
 
-    [SerializeField] private Text myText;
+    [SerializeField] private TextMeshProUGUI myText;
+
+    private void Start()
+    {
+        myText = GetComponent<TextMeshProUGUI>();
+    }
 
     void Update()
     {

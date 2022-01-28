@@ -1,17 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TimerBehaviour : MonoBehaviour
 {
     public bool onTrigger;
-    public float seconde;
+    public SecondeSO secondeSO;
+    protected float newTime;
+    private TextTime textTime;
+
+    private void Start()
+    {
+        textTime = GetComponent<TextTime>();
+    }
 
     void Update()
     {
         if (onTrigger == false)
         {
-            seconde -= Time.deltaTime;
+            newTime = secondeSO.seconde -= Time.deltaTime;
+            textTime.ShowTime();
+        }
+
+        if (newTime == 0)
+        {
+            //UNITY EVENT
         }
     }
 }

@@ -10,7 +10,7 @@ public class Temp : MonoBehaviour
     void Start()
     {
         var objectName = transform.name;
-       // stringGEWithParameter.Raise(objectName);
+        //stringGEWithParameter.Raise(objectName);
     }
 
     void Update()

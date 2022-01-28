@@ -4,6 +4,6 @@ public class ItemsAddTime : TimerBehaviour
 {
     public void AddTime()
     {
-        seconde += seconde;
+        secondeSO.seconde += secondeSO.seconde;
     }
 }
