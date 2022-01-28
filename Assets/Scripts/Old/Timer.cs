@@ -21,8 +21,6 @@ public class Timer : MonoBehaviour
             seconde -= Time.deltaTime;
 
             myText.text = Mathf.Round(seconde).ToString();
-            
-            end.EndOfTheGame();
         }
 
         else
