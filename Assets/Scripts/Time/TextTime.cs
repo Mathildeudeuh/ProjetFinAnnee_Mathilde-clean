@@ -1,17 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class TextTime : TimerBehaviour
 {
-    [SerializeField] Text myText;
-    void Start()
+    [SerializeField] private TextMeshProUGUI myText;
+
+    public void ShowTime()
     {
         myText.text = Mathf.Round(seconde).ToString();
-
-    }
-
-    void Update()
-    {
-        
     }
 }

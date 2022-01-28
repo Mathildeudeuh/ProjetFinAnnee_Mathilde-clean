@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
-public class ItemsAddTime : ScriptableObject
+public class ItemsAddTime : TimerBehaviour
 {
+    private TimerBehaviour timer;
     public void AddTime()
     {
-        
-        var itemTime = FindObjectOfType<Timer>();
-        itemTime.seconde += itemTime.addTime;
+        seconde += seconde;
     }
 }

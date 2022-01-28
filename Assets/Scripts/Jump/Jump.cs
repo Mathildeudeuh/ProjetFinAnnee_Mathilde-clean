@@ -3,7 +3,7 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
     private Rigidbody2D body2D;
-    public bool canJump;
+    public bool canJump {get; protected set; }
     public JumpForceSO jumpForce;
 
     private void Awake()

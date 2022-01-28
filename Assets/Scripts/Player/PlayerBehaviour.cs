@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 [RequireComponent(typeof(AddForceMove))]
 [RequireComponent(typeof(Mover))]
 [RequireComponent(typeof(PlayerAnimations))]
@@ -14,6 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     private SpriteRenderer sprite;
     public PlayerAnimations animations;
     private Jump jump;
+
 
     void Start()
     {
@@ -42,5 +44,6 @@ public class PlayerBehaviour : MonoBehaviour
         if (!obj.performed)
             return;
         animations.JumpOnPerformed();
+        //jump.Jumping();
     }
 }
