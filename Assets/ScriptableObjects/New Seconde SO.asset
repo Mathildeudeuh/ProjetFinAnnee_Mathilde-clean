@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550f7b089804e3841955730fe3bd05f4, type: 3}
   m_Name: New Seconde SO
   m_EditorClassIdentifier: 
-  seconde: 0
+  seconde: -2.3346143
