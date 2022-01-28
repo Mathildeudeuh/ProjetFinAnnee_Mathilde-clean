@@ -2,8 +2,9 @@
 
 public class ItemsAddTime : TimerBehaviour
 {
+    private TimerBehaviour timer;
     public void AddTime()
     {
-        secondeSO.seconde += secondeSO.seconde;
+        seconde += seconde;
     }
 }

@@ -44,6 +44,6 @@ public class PlayerBehaviour : MonoBehaviour
         if (!obj.performed)
             return;
         animations.JumpOnPerformed();
-        jump.Jumping();
+        //jump.Jumping();
     }
 }

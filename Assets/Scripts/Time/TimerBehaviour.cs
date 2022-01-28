@@ -1,28 +1,38 @@
 using UnityEngine;
+//using UnityEngine.Events;
 
 public class TimerBehaviour : MonoBehaviour
 {
     public bool onTrigger;
-    public SecondeSO secondeSO;
-    protected float newTime;
+    public float seconde;
     private TextTime textTime;
+    private ItemsAddTime addTime;
+    private GameOver gameOver;
+    //public UnityEvent endTimeEvent;
 
     private void Start()
     {
         textTime = GetComponent<TextTime>();
+        gameOver = GetComponent<GameOver>();
+        addTime = GetComponent<ItemsAddTime>();
     }
 
     void Update()
     {
         if (onTrigger == false)
         {
-            newTime = secondeSO.seconde -= Time.deltaTime;
+            seconde -= Time.deltaTime;
             textTime.ShowTime();
+
+            if (seconde <= 0)
+            {
+                gameOver.EndOfTheGame();
+            }
         }
 
-        if (newTime == 0)
+        else if (onTrigger == true)
         {
-            //UNITY EVENT
+            addTime.AddTime();
         }
     }
 }

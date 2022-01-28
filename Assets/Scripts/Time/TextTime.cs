@@ -7,6 +7,6 @@ public class TextTime : TimerBehaviour
 
     public void ShowTime()
     {
-        myText.text = Mathf.Round(newTime).ToString();
+        myText.text = Mathf.Round(seconde).ToString();
     }
 }
