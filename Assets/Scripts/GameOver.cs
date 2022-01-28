@@ -1,19 +1,13 @@
 using UnityEngine;
 
-public class GameOver : MonoBehaviour
+public class GameOver : TimerBehaviour
 {
-    [SerializeField] GameObject gameOver;
+    [SerializeField] GameObject gameOverEnd;
     [SerializeField] GameObject scene;
 
     public void EndOfTheGame()
     {
-        var endTime = FindObjectOfType<Timer>();
-            // Si les secondes sont inférieur à 0...
-            if (endTime.seconde <= 0)
-            {
-                // ... une nouvelle scène se charge
-                gameOver.SetActive(true);
-                scene.SetActive(false);
-            }
+        gameOverEnd.SetActive(true);
+        scene.SetActive(false);
     }
 }
